@@ -40,6 +40,10 @@ body {
   line-height: 1;
 }
 
+body.scroll-lock{
+  overflow-x: hidden;
+}
+
 input,
 button,
 textarea {

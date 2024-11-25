@@ -1,0 +1,168 @@
+.btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 16px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: -95px;
+        top: 0;
+        width: 50px;
+        height: 100px;
+        transform: skewX(-45deg);
+        background: linear-gradient(90deg, rgb(255 255 255 / 10%), rgb(255 255 255 / 50%));
+    }
+
+    &:hover {
+        &::before {
+            left: 130%;
+            transition: left 0.5s ease-in-out;
+
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+    }
+
+    &.black {
+        padding: 18px 31px 19px 30px;
+        background: var(--background, #1d1f21);
+        gap: 5px;
+
+        span {
+            font-family: ProximaNova;
+            font-weight: bold;
+            line-height: 26.5px;
+            background: var(--primary, linear-gradient(95deg, #68c9ff 9.27%, #d1b5ff 84.06%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+        }
+
+        @include media-breakpoint-down(xs) {
+            width: auto;
+        }
+    }
+
+    &.gradient {
+        padding: 18px 22px 19px;
+        background: var(--primary, linear-gradient(95deg, #68c9ff 9.27%, #d1b5ff 84.06%));
+        gap: 8px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: -95px;
+            top: 0;
+            width: 50px;
+            height: 100px;
+            transform: skewX(-45deg);
+            background: linear-gradient(90deg, rgb(255 255 255 / 10%), rgb(255 255 255 / 50%));
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+
+            @include media-breakpoint-down(lg) {
+                width: calc(18px + (24 - 18) * ((100vw - 375px) / (1440 - 375)));
+                height: calc(18px + (24 - 18) * ((100vw - 375px) / (1440 - 375)));
+            }
+        }
+
+        span {
+            font-weight: bold;
+            line-height: 26.5px;
+            color: #1d1f21;
+        }
+
+        &:hover {
+            &::before {
+                left: 130%;
+                transition: left 0.5s ease-in-out;
+
+                @include media-breakpoint-down(sm) {
+                    display: none;
+                }
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            padding: 12px 30px 13px 28px;
+        }
+    }
+
+    &.grey {
+        padding: 14px 22px;
+        background: var(--linear-10, linear-gradient(95deg, rgb(104 201 255 / 10%) 9.27%, rgb(209 181 255 / 10%) 84.06%));
+        gap: 8px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: -100px;
+            top: 0;
+            width: 50px;
+            height: 100px;
+            transform: skewX(-45deg);
+            background: linear-gradient(90deg, rgb(255 255 255 / 10%), rgb(255 255 255 / 50%));
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+
+            @include media-breakpoint-down(lg) {
+                width: calc(18px + (24 - 18) * ((100vw - 375px) / (1440 - 375)));
+                height: calc(18px + (24 - 18) * ((100vw - 375px) / (1440 - 375)));
+            }
+        }
+
+        span {
+            font-family: ProximaNova;
+            font-weight: bold;
+            background: var(--primary, linear-gradient(95deg, #68c9ff 9.27%, #d1b5ff 84.06%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        &:hover {
+            &::before {
+                left: 130%;
+                transition: left 0.5s ease-in-out;
+
+                @include media-breakpoint-down(sm) {
+                    display: none;
+                }
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            padding: 12px 30px 13px 28px;
+        }
+    }
+}
