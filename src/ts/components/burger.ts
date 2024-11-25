@@ -14,12 +14,7 @@ export class BurgerMenu {
   }
 
   private toggleBurger(): void {
-    if (
-      this.headerBurger &&
-      this.headerMenu &&
-      this.burgerBackdrop &&
-      this.buttonAuthorization
-    ) {
+    if (this.headerBurger && this.headerMenu && this.burgerBackdrop && this.buttonAuthorization) {
       this.headerBurger.classList.toggle('header__burger_active');
       this.burgerBackdrop.classList.toggle('burger__backdrop_active');
       this.headerMenu.classList.toggle('header__menu_active');

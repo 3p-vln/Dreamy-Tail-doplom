@@ -1,5 +1,5 @@
-import {BurgerMenu} from './components/burger';
+import { BurgerMenu } from './components/burger';
 
 document.addEventListener('DOMContentLoaded', async () => {
-    new BurgerMenu();
+  new BurgerMenu();
 });

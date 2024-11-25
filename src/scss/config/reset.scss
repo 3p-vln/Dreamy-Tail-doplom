@@ -40,7 +40,7 @@ body {
   line-height: 1;
 }
 
-body.scroll-lock{
+body.scroll-lock {
   overflow-x: hidden;
 }
 
@@ -110,6 +110,6 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
