@@ -1,0 +1,230 @@
+.background {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  &__blurs {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+
+    &-first {
+      position: absolute;
+      left: 0%;
+      top: 64px;
+      vertical-align: top;
+      overflow: clip;
+      max-width: 100%;
+      z-index: -1;
+
+      @include media-breakpoint-down(xs) {
+        display: none;
+      }
+    }
+
+    &-first-mobile {
+      display: none;
+      position: absolute;
+      left: 0%;
+      top: 64px;
+      vertical-align: top;
+      overflow: clip;
+      max-width: 100%;
+      z-index: -1;
+      @include media-breakpoint-down(xs) {
+        display: block;
+      }
+    }
+
+    &-second {
+      position: absolute;
+      left: 0%;
+      top: 600px;
+      vertical-align: top;
+      overflow: clip;
+      max-width: 100%;
+      z-index: -1;
+
+      @include media-breakpoint-down(md) {
+        left: 0%;
+        top: 1100px;
+      }
+
+      @include media-breakpoint-down(xs) {
+        display: none;
+      }
+    }
+
+    &-second-mobile {
+      display: none;
+      position: absolute;
+      left: 0%;
+      top: 600px;
+      vertical-align: top;
+      overflow: clip;
+      max-width: 100%;
+      z-index: -1;
+
+      @include media-breakpoint-down(xs) {
+        display: block;
+      }
+    }
+
+    &-third {
+      position: absolute;
+      left: 0%;
+      top: 1564px;
+      vertical-align: top;
+      overflow: clip;
+      max-width: 100%;
+      z-index: -1;
+
+      @include media-breakpoint-down(md) {
+        left: 0%;
+        top: 2700px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        left: 0%;
+        top: 2200px;
+      }
+
+      @include media-breakpoint-down(xs) {
+        display: none;
+      }
+    }
+
+    &-third-mobile {
+      display: none;
+      position: absolute;
+      left: 0%;
+      top: 1900px;
+      vertical-align: top;
+      overflow: clip;
+      max-width: 100%;
+      z-index: -1;
+
+      @include media-breakpoint-down(xs) {
+        display: block;
+      }
+    }
+  }
+
+  &__not,
+  &__make {
+    position: absolute;
+    font-family: ProximaNova;
+    font-weight: bold;
+    text-wrap: nowrap;
+    letter-spacing: 1px;
+    font-size: 79px;
+    opacity: 0.2;
+    color: transparent;
+    -webkit-text-stroke: 1px $whiteTwo;
+  }
+
+  &__make {
+    left: -1.3%;
+    top: 90px;
+
+    @include media-breakpoint-down(xs) {
+      left: 50%;
+      top: 76px;
+      font-size: 50px;
+    }
+  }
+
+  &__not {
+    right: 41.2%;
+    bottom: -768px;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  &__ellipse-first {
+    position: absolute;
+    right: 11.9%;
+    top: 112px;
+    width: 10px;
+    height: 10px;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  &__ellipse-second {
+    position: absolute;
+    left: 52.9%;
+    top: 294px;
+    width: 25px;
+    height: 25px;
+
+    @include media-breakpoint-down(xs) {
+      left: 28%;
+      top: 464px;
+    }
+  }
+
+  &__star-first {
+    position: absolute;
+    right: 45.5%;
+    top: 124px;
+    width: 46px;
+    height: 62px;
+
+    @include media-breakpoint-down(md) {
+      right: 30%;
+      top: 74px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      right: 9.5%;
+      top: 426px;
+      width: 36px;
+      height: 48px;
+    }
+  }
+
+  &__star-second {
+    position: absolute;
+    left: 44%;
+    top: 614px;
+    width: 36px;
+    height: 48px;
+    z-index: 3;
+
+    @include media-breakpoint-down(xs) {
+      left: 0%;
+      top: 431px;
+      width: 30px;
+      height: 41px;
+    }
+  }
+
+  &__ellipse-third {
+    position: absolute;
+    left: 7%;
+    top: 1184px;
+    width: 25px;
+    height: 25px;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  &__star-third {
+    position: absolute;
+    left: 5.3%;
+    top: 1018px;
+    width: 46px;
+    height: 62px;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+}
