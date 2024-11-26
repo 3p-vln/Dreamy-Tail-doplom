@@ -30,17 +30,9 @@
     position: relative;
 
     &__ico {
-      border-radius: 5px;
       width: 30px;
       height: 30px;
-      padding: 5px;
-      background: $darkerGradientBtn;
       position: absolute;
-
-      svg {
-        width: 100%;
-        height: 100%;
-      }
     }
 
     &__short {
