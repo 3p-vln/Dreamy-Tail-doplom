@@ -21,7 +21,6 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    color: $whiteColor;
     justify-content: space-between;
 
     @include media-breakpoint-down(sm) {

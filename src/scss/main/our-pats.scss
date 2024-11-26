@@ -1,0 +1,38 @@
+.our-pats {
+  margin-top: 88px;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .left-img {
+    max-width: 488px;
+    width: 100%;
+    aspect-ratio: 1 / 1.2;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .info {
+    padding-top: 90px;
+    min-width: 420px;
+
+    @include media-breakpoint-down(md) {
+      padding-top: 20px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 0;
+      min-width: 0;
+    }
+  }
+}
