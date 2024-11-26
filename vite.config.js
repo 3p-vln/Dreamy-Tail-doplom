@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import injectHTML from 'vite-plugin-html-inject';
 import pages from './pages.config.js';
 
-
 const pagesInput = {};
 
 pages.forEach((page) => {
@@ -10,7 +9,7 @@ pages.forEach((page) => {
 });
 
 export default defineConfig({
-  base: '/Dreamy-Tail',
+  base: '/Dreamy-Tail-doplom',
   build: {
     target: 'es2022',
     outDir: 'build',
