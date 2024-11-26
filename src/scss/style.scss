@@ -44,6 +44,7 @@ body {
   line-height: 26.5px;
   letter-spacing: 1.8px;
   font-size: clamp(14px, 2.5vw, 18px);
+  text-transform: uppercase;
   background: $rainbowBtnGradient;
   background-clip: text;
   -webkit-background-clip: text;
