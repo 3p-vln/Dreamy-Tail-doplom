@@ -1,0 +1,97 @@
+<div class="payment">
+  <div class="container">
+    <div class="payment__content">
+      <div class="payment__form form">
+        <div class="form__head">
+          <h2 class="form__subtitle subtitle">Донат на підтримку</h2>
+          <h3 class="form__title title">Кожна ваша пожертва допомагає тваринам, які потребують догляду та турботи, знайти шанс на краще життя</h3>
+        </div>
+        <div class="form__tabs tabs">
+          <div class="tabs__nav">
+            <button class="tabs__nav-btn" type="button" data-tab="#card">Кредитна картка</button>
+            <button class="tabs__nav-btn" type="button" data-tab="#paypal">PayPal</button>
+            <div class="selector"></div>
+          </div>
+          <div class="tabs__content">
+            <div class="tabs__item" id="card">
+              <form class="tabs__form form" autocomplete="off" id="form-card">
+                <div class="form__item">
+                  <label class="form__item-label">Номер картки</label>
+                  <input type="text" class="form__item-input card-numb" id="card-numb" name="card-numb" placeholder="0000 0000 0000 0000" autocomplete="off" inputmode="numeric" />
+                </div>
+                <div class="form__dete-and-cvv">
+                  <div class="form__item">
+                    <label class="form__item-label">Термін дії</label>
+                    <input type="text" class="form__item-input date" id="date" placeholder="01/01" autocomplete="off" inputmode="numeric" />
+                  </div>
+                  <div class="form__item">
+                    <label class="form__item-label">CVV</label>
+                    <input type="password" class="form__item-input cvv" id="cvv" placeholder="000" autocomplete="off" inputmode="numeric" />
+                  </div>
+                </div>
+                <div class="form__item">
+                  <label class="form__item-label">Власник картки (ENG)</label>
+                  <input type="text" class="form__item-input" id="name" name="name" placeholder="Ivan" autocomplete="off" />
+                </div>
+                <div class="form__item">
+                  <label class="form__item-label">Сума пожертви</label>
+                  <input type="text" class="form__item-input" id="summ" name="summ" placeholder="0000" autocomplete="off" />
+                </div>
+                <a href="#" class="form__send">
+                  <button class="form__send-btn btn gradient" type="submit">
+                    <p>Надіслати</p>
+                  </button>
+                </a>
+                <div class="form__agree">
+                  <label class="form__agree-label">
+                    <input type="checkbox" class="form__agree-checkbox" id="checkbox" autocomplete="off" />
+                    <span class="form__agree-checkstyle"></span>
+                    Я згоден з <a href="#">Політикою конфіденційності</a> та <a href="#">Умовами використання</a>
+                  </label>
+                </div>
+              </form>
+            </div>
+            <div class="tabs__item" id="paypal">
+              <form class="tabs__form form" autocomplete="off" id="form-paypal">
+                <div class="form__item">
+                  <label class="form__item-label">Номер картки</label>
+                  <input type="text" class="form__item-input card-numb" id="card-numb" name="card-numb" placeholder="0000 0000 0000 0000" autocomplete="off" inputmode="numeric" />
+                </div>
+                <div class="form__dete-and-cvv">
+                  <div class="form__item">
+                    <label class="form__item-label">Термін дії</label>
+                    <input type="text" class="form__item-input date" id="date" placeholder="01/01" autocomplete="off" inputmode="numeric" />
+                  </div>
+                  <div class="form__item">
+                    <label class="form__item-label">CVV</label>
+                    <input type="password" class="form__item-input cvv" id="cvv" placeholder="000" autocomplete="off" inputmode="numeric" />
+                  </div>
+                </div>
+                <div class="form__item">
+                  <label class="form__item-label">Власник картки (ENG)</label>
+                  <input type="text" class="form__item-input" id="name" name="name" placeholder="Ivan" autocomplete="off" />
+                </div>
+                <div class="form__item">
+                  <label class="form__item-label">Сума пожертви</label>
+                  <input type="text" class="form__item-input" id="summ" name="summ" placeholder="0000" autocomplete="off" />
+                </div>
+                <a href="#" class="form__send">
+                  <button class="form__send-btn btn gradient" type="submit">
+                    <p>Надіслати</p>
+                  </button>
+                </a>
+                <div class="form__agree">
+                  <label class="form__agree-label">
+                    <input type="checkbox" class="form__agree-checkbox" id="checkbox" autocomplete="off" />
+                    <span class="form__agree-checkstyle"></span>
+                    Я згоден з <a href="#">Політикою конфіденційності</a> та <a href="#">Умовами використання</a>
+                  </label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

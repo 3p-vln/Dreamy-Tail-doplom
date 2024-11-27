@@ -13,6 +13,10 @@ const pages = [
     name: 'contacts',
     path: resolve(__dirname, 'contacts.html'),
   },
+  {
+    name: 'donate',
+    path: resolve(__dirname, 'donate.html'),
+  },
 ];
 
 export default pages;
