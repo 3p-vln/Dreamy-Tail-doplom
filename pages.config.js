@@ -17,6 +17,10 @@ const pages = [
     name: 'donate',
     path: resolve(__dirname, 'donate.html'),
   },
+  {
+    name: 'registration',
+    path: resolve(__dirname, 'registration.html'),
+  },
 ];
 
 export default pages;
