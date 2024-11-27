@@ -10,25 +10,7 @@ class FormValidation {
     this.formId = formId;
     this.validator = new JustValidate(this.formId);
 
-    this.applyMasks();
     this.initializeValidation();
-  }
-
-  private applyMasks() {
-    Inputmask({
-      mask: '9999 9999 9999 9999',
-      placeholder: ' ',
-    }).mask(document.querySelector('#card-numb') as HTMLInputElement);
-
-    Inputmask({
-      mask: '99/99',
-      placeholder: ' ',
-    }).mask(document.querySelector('#date') as HTMLInputElement);
-
-    Inputmask({
-      mask: '999',
-      placeholder: '',
-    }).mask(document.querySelector('#cvv') as HTMLInputElement);
   }
 
   private initializeValidation() {
@@ -107,6 +89,7 @@ export class TabValidation {
     card.forEach((item) => {
       const tabId = item.getAttribute('data-tab');
       const currentTab = document.querySelector(tabId + ' .form') as HTMLElement;
+      this.applyMasks(currentTab);
 
       if (currentTab.getAttribute('id') == 'form-card') {
         new FormValidation('#form-card');
@@ -114,5 +97,22 @@ export class TabValidation {
         new FormValidation('#form-paypal');
       }
     });
+  }
+
+  private applyMasks(currentTab: HTMLElement) {
+    Inputmask({
+      mask: '9999 9999 9999 9999',
+      placeholder: ' ',
+    }).mask(currentTab.querySelector('#card-numb') as HTMLInputElement);
+
+    Inputmask({
+      mask: '99/99',
+      placeholder: ' ',
+    }).mask(currentTab.querySelector('#date') as HTMLInputElement);
+
+    Inputmask({
+      mask: '999',
+      placeholder: '',
+    }).mask(currentTab.querySelector('#cvv') as HTMLInputElement);
   }
 }
