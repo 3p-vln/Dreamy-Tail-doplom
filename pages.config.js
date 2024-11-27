@@ -9,6 +9,10 @@ const pages = [
     name: 'about-company',
     path: resolve(__dirname, 'about-company.html'),
   },
+  {
+    name: 'contacts',
+    path: resolve(__dirname, 'contacts.html'),
+  },
 ];
 
 export default pages;
