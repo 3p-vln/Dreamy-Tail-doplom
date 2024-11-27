@@ -1,1 +1,0 @@
-import{B as o}from"./script-CCH4RFpX.js";import{L as e,P as r}from"./stop-preload-8K5WZVKR.js";document.addEventListener("DOMContentLoaded",async()=>{new o,e.stop("dreamy-tail-info__right"),e.stop("our-pats__left")});new r;

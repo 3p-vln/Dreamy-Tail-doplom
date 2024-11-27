@@ -1,1 +1,0 @@
-import"./script-CCH4RFpX.js";import{L as o,P as e}from"./stop-preload-8K5WZVKR.js";document.addEventListener("DOMContentLoaded",async()=>{o.stop("mission-and-vision__right-img"),o.stop("galery")});new e;
