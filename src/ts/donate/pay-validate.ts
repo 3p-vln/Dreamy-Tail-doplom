@@ -1,5 +1,6 @@
 import JustValidate from 'just-validate';
 import Inputmask from 'inputmask';
+import { Popup } from './pop-up';
 
 class FormValidation {
   private formId: string;
@@ -88,8 +89,9 @@ class FormValidation {
         },
       ])
       .onSuccess((event: SubmitEvent) => {
-        event.preventDefault();
-        console.log('Форма успешно отправлена!');
+        new Popup();
+        // очислить форму
+        (event.target as HTMLFormElement).reset();
       });
   }
 }
