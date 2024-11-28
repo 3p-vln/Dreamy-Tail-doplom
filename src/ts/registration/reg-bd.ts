@@ -25,23 +25,11 @@ export class AccountManager {
     return element;
   }
 
-  //   private getElementsByClass(className: string): NodeListOf<HTMLLabelElement> {
-  //     return document.querySelectorAll<HTMLLabelElement>(`.${className}`);
-  //   }
-
-  private async saveUserToDatabase(uid: string, name: string, surname: string, phone: string): Promise<void> {
-    const userRef = await addDoc(collection(db, 'users'), { uid, name, surname, phone });
+  private async saveUserToDatabase(uid: string, role: string, email: string, name: string, surname: string, phone: string): Promise<void> {
+    const userRef = await addDoc(collection(db, 'users'), { uid, role, email, name, surname, phone });
     console.log('Document written with ID: ', userRef.id);
     document.cookie = `UID=${uid}`;
   }
-
-  //   private redirectToPage(role: string): void {
-  //     if (role === 'customer') {
-  //       window.location.href = '/Artist-NFT/client.html';
-  //     } else {
-  //       window.location.href = '/Artist-NFT/for-owner.html';
-  //     }
-  //   }
 
   public async createAccount(): Promise<void> {
     const email = this.getElementById(this.emailInputId).value;
@@ -55,9 +43,8 @@ export class AccountManager {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const uid = userCredential.user.uid;
 
-      await this.saveUserToDatabase(uid, name, surname, phone);
+      await this.saveUserToDatabase(uid, 'user', email, name, surname, phone);
       console.log(uid);
-      //   this.redirectToPage(role);
     } catch (error) {
       console.error('There was an error:', error);
       this.showLoginError(error);
@@ -65,7 +52,6 @@ export class AccountManager {
   }
 
   private showLoginError(error: unknown): void {
-    // Implement a method to display the login error to the user
     console.error('Login error:', error);
   }
 }
