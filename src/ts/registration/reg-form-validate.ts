@@ -42,17 +42,17 @@ export class RegFormValidation {
       .addField('#surname', [
         {
           rule: 'required',
-          errorMessage: `Ведіть фамілію`,
+          errorMessage: `Ведіть прізвище`,
         },
         {
           rule: 'minLength',
           value: 2,
-          errorMessage: `Фамілія має містити більше символів`,
+          errorMessage: `Прізвище має містити більше символів`,
         },
         {
           rule: 'customRegexp',
           value: /^[А-Яа-яЁёІіЇїЄєҐґA-Za-z]{2,}$/,
-          errorMessage: `Фамілія має містити лише літери`,
+          errorMessage: `Прізвище має містити лише літери`,
         },
       ])
       .addField('#email', [
