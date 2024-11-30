@@ -19,6 +19,9 @@
   border-radius: 15px;
   padding: 15px;
   color: $whiteColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &__viev {
     width: fit-content;
