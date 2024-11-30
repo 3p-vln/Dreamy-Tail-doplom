@@ -1,0 +1,30 @@
+.background {
+  position: absolute;
+  margin-top: 65px;
+  width: 100%;
+  z-index: 1;
+
+  &__blur {
+    position: absolute;
+    left: 9%;
+  }
+
+  &__ellipse {
+    position: absolute;
+    right: 24.5%;
+    width: 25px;
+    height: 25px;
+  }
+
+  &__star {
+    position: absolute;
+    left: 27%;
+    top: 46px;
+    width: 45px;
+    height: 65px;
+  }
+
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}

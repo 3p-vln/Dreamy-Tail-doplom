@@ -25,6 +25,10 @@ const pages = [
     name: 'log-in',
     path: resolve(__dirname, 'log-in.html'),
   },
+  {
+    name: 'catalog',
+    path: resolve(__dirname, 'catalog.html'),
+  },
 ];
 
 export default pages;
