@@ -51,7 +51,7 @@ export class RenderCards {
 
     pat.forEach((item) => {
       const cardHtml = `
-        <a href="" class="list__item pet ${item.id}">
+        <a href="one-pet.html?id=${item.id}" class="list__item pet ${item.id}">
           <div class="pet__info">
             <div class="pet__viev">${item.view}</div>
 
