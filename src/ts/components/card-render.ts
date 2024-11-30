@@ -6,6 +6,7 @@ export class RenderCards {
   private patsArr: {
     id: string;
     img: string;
+    imgWebP: string;
     name: string;
     shortInfo: string;
     view: string;
@@ -33,6 +34,7 @@ export class RenderCards {
         this.patsArr.push({
           id: doc.id,
           img: data.img || '',
+          imgWebP: data.imgWebP,
           name: data.name || 'No Name',
           shortInfo: data.shortInfo || '',
           view: data.view || '',
@@ -56,7 +58,10 @@ export class RenderCards {
             <div class="pet__viev">${item.view}</div>
 
             <div class="pet__img">
-              <img src="${item.img}" alt="cat" />
+              <picture>
+                <source srcset=${item.imgWebP} type="image/webp" />
+                <img src="${item.img}" alt="cat" />
+              </picture>
             </div>
 
             <p class="pet__name">${item.name}</p>
