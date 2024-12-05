@@ -64,6 +64,12 @@ export class AddPetToUser {
       await updateDoc(userDocRef, {
         myPet: arrayUnion(petId),
       });
+
+      const petDocRef = doc(db, 'pats', petId);
+
+      await updateDoc(petDocRef, {
+        owner: true,
+      });
     } catch (error) {
       console.error(error);
     }

@@ -10,6 +10,7 @@ export class RenderCards {
     name: string;
     shortInfo: string;
     view: string;
+    owner: boolean;
   }[];
 
   constructor(cardHolder: string) {
@@ -38,6 +39,7 @@ export class RenderCards {
           name: data.name || 'No Name',
           shortInfo: data.shortInfo || '',
           view: data.view || '',
+          owner: data.owner || false,
         });
       });
 
@@ -52,27 +54,29 @@ export class RenderCards {
     this.cardHolder.innerHTML = '';
 
     pat.forEach((item) => {
-      const cardHtml = `
-        <a href="one-pet.html?id=${item.id}" class="list__item pet ${item.id}">
-          <div class="pet__info">
-            <div class="pet__viev">${item.view}</div>
+      if (item.owner === false) {
+        const cardHtml = `
+          <a href="one-pet.html?id=${item.id}" class="list__item pet ${item.id}">
+            <div class="pet__info">
+              <div class="pet__viev">${item.view}</div>
 
-            <div class="pet__img">
-              <picture>
-                <source srcset=${item.imgWebP} type="image/webp" />
-                <img src="${item.img}" alt="cat" />
-              </picture>
+              <div class="pet__img">
+                <picture>
+                  <source srcset=${item.imgWebP} type="image/webp" />
+                  <img src="${item.img}" alt="cat" />
+                </picture>
+              </div>
+
+              <p class="pet__name">${item.name}</p>
+              <p class="pet__short-info">${item.shortInfo}</p>
             </div>
 
-            <p class="pet__name">${item.name}</p>
-            <p class="pet__short-info">${item.shortInfo}</p>
-          </div>
+            <button class="pet__page btn gradient">Переглянути</button>
+          </a>
+        `;
 
-          <button class="pet__page btn gradient">Переглянути</button>
-        </a>
-      `;
-
-      this.cardHolder.insertAdjacentHTML('beforeend', cardHtml);
+        this.cardHolder.insertAdjacentHTML('beforeend', cardHtml);
+      }
     });
   }
 }
