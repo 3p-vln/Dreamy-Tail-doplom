@@ -207,7 +207,7 @@ export class AddNewPet {
         this.updateData().then(() => {
           setTimeout(() => {
             location.reload();
-          }, 20000);
+          }, 2000);
         });
       });
   }
