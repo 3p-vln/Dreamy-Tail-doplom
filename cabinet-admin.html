@@ -4,11 +4,15 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/Dreamy-Tail-doplom/dreamy-tail.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dreamy Tail. Каталог</title>
-  <script type="module" crossorigin src="/Dreamy-Tail-doplom/assets/catalog-CU1iuTvT.js"></script>
+  <title>Особистий кабінет</title>
+  <script type="module" crossorigin src="/Dreamy-Tail-doplom/assets/cabinet-admin-CQfv5FgB.js"></script>
   <link rel="modulepreload" crossorigin href="/Dreamy-Tail-doplom/assets/script-Ck09IiTp.js">
+  <link rel="modulepreload" crossorigin href="/Dreamy-Tail-doplom/assets/just-validate.es-C73wyOde.js">
+  <link rel="modulepreload" crossorigin href="/Dreamy-Tail-doplom/assets/inputmask-CsGDK5Eu.js">
+  <link rel="modulepreload" crossorigin href="/Dreamy-Tail-doplom/assets/pop-up-Cl5BhUHu.js">
+  <link rel="modulepreload" crossorigin href="/Dreamy-Tail-doplom/assets/tabs-CbdPjoDI.js">
   <link rel="stylesheet" crossorigin href="/Dreamy-Tail-doplom/assets/script-_qIP27pt.css">
-  <link rel="stylesheet" crossorigin href="/Dreamy-Tail-doplom/assets/catalog-D3QMjJWr.css">
+  <link rel="stylesheet" crossorigin href="/Dreamy-Tail-doplom/assets/cabinet-admin-CpvhBeuF.css">
 </head>
 
   <body>
@@ -66,34 +70,197 @@
 
       <div class="page">
         <div class="background">
-  <svg class="background__ellipse">
-    <use href="#elipse"></use>
-  </svg>
+  <div class="background__blur-left">
+    <div class="background__blur-left-first"></div>
+    <div class="background__blur-left-second"></div>
+  </div>
 
-  <svg class="background__star">
-    <use href="#star"></use>
-  </svg>
-
-  <img src="/Dreamy-Tail-doplom/assets/blur-DkhRCm9c.png" class="background__blur" />
+  <div class="background__blur-right">
+    <div class="background__blur-right-first"></div>
+    <div class="background__blur-right-second"></div>
+    <div class="background__blur-right-third"></div>
+  </div>
+  <img src="/Dreamy-Tail-doplom/assets/blur-mobile-Co3cgV2d.png" alt="blur" class="background__blur-mobile" />
 </div>
 
-        <div class="catalog-head">
+        <div class="cabinet-tabs">
+          <div class="container">
+            <div class="cabinet-tabs__content">
+              <div class="cabinet-tabs__tabs tabs">
+                <div class="tabs__nav">
+  <button class="tabs__nav-btn tabs__nav-btn_active" type="button" data-tab="#main-info">Особиста інформація</button>
+  <button class="tabs__nav-btn" type="button" data-tab="#all-pet">Всі тварини</button>
+  <button class="tabs__nav-btn" type="button" data-tab="#add-need-for-pat">Додавання потреб улюбленця</button>
+  <button class="tabs__nav-btn" type="button" data-tab="#users">Користувачі</button>
+  <div class="selector"></div>
+</div>
+
+                <div class="tabs__content">
+                  <div class="tabs__item" id="main-info">
+                    <div class="main-info">
+  <div class="main-info__content">
+    <div class="main-info__item name">
+      <p class="name__title">Ім'я:</p>
+      <p class="name__db"></p>
+    </div>
+
+    <div class="main-info__item surname">
+      <p class="surname__title">Прізвище:</p>
+      <p class="surname__db"></p>
+    </div>
+
+    <div class="main-info__item phone">
+      <p class="phone__title">Контактний номер телефону:</p>
+      <p class="phone__db"></p>
+    </div>
+
+    <div class="main-info__item email">
+      <p class="email__title">Пошта:</p>
+      <p class="email__db"></p>
+    </div>
+  </div>
+
+  <button class="main-info__edit-info btn gradient">Змінити інформацію</button>
+</div>
+
+                  </div>
+                  <div class="tabs__item" id="all-pet">
+                    <div class="all-pet">
+                      <button class="all-pet__add btn gradient">Додати нову тварину</button>
+                      <div class="list">1</div>
+                    </div>
+                  </div>
+                  <div class="tabs__item" id="add-need-for-pat">2</div>
+                  <div class="tabs__item" id="users">3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pop-up-info pop-up">
+  <div class="pop-up__backdrop"></div>
+
   <div class="container">
-    <div class="catalog-head__content">
-      <h2 class="catalog-head__subtitle subtitle">Наші улюбленці</h2>
-      <h3 class="catalog-head__title title">Вони варті любові кожного!</h3>
+    <div class="pop-up__content">
+      <div class="pop-up__head">
+        <h2 class="pop-up__subtitle subtitle">Зміна інформації</h2>
+      </div>
+
+      <div class="pop-up__form form">
+        <form autocomplete="off" id="form-edit">
+          <div class="form__item">
+            <label class="form__item-label"> Ім'я </label>
+            <input type="text" class="form__item-input name" id="name" name="name" placeholder="Іван" autocomplete="off" />
+          </div>
+          <div class="form__item">
+            <label class="form__item-label"> Прізвище </label>
+            <input type="text" class="form__item-input surname" id="surname" name="surname" placeholder="Іванов" autocomplete="off" />
+          </div>
+          <div class="form__item">
+            <label class="form__item-label"> Номер телефону </label>
+            <input type="tel" class="form__item-input tel" id="tel" name="tel" placeholder="+38 (099) 123 12 12" autocomplete="off" />
+          </div>
+          <button class="form__send-btn btn gradient" type="submit">
+            <p>Зберегти</p>
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 </div>
 
-        <div class="catalog-list">
+          <div class="pop-up-new-pet pop-up">
+  <div class="pop-up__backdrop"></div>
+
   <div class="container">
-    <div class="catalog-list__content">
-      <div class="catalog-list list"></div>
+    <div class="pop-up__content">
+      <div class="pop-up__head">
+        <h2 class="pop-up__subtitle subtitle">Додавання нової тварини</h2>
+      </div>
+
+      <div class="pop-up__form form">
+        <form autocomplete="off" id="form-new-pet">
+          <div class="form__item">
+            <label class="form__item-label"> Вид </label>
+            <input type="text" class="form__item-input viev" id="viev" name="viev" placeholder="Кіт" autocomplete="off" />
+          </div>
+          <div class="form__item">
+            <label class="form__item-label"> Ім'я </label>
+            <input type="text" class="form__item-input name" id="name-pet" name="name-pet" placeholder="Мася" autocomplete="off" />
+          </div>
+          <div class="form__item">
+            <label class="form__item-label"> Порода </label>
+            <input type="text" class="form__item-input breed" id="breed" name="breed" placeholder="Безпородний" autocomplete="off" />
+          </div>
+          <div class="form__item">
+            <label class="form__item-label"> Вік </label>
+            <input type="text" class="form__item-input age" id="age" name="age" placeholder="9 років" autocomplete="off" />
+          </div>
+          <div class="form__item">
+            <label class="form__item-label">Коротка інформація</label>
+            <textarea class="form__item-textarea short-info" id="short-info" name="short-info" placeholder="Коротка інформація для карточки тварини в каталозі"></textarea>
+          </div>
+          <div class="form__item">
+            <label class="form__item-label">Повна інформація</label>
+            <textarea class="form__item-textarea full-info" id="full-info" name="full-info" placeholder="Повна інформація для сторінки тварини: характеристика, активність, хвороби тощо"></textarea>
+          </div>
+          <div class="form__item form__item-file">
+            <label for="img-jpg">Завантажити картинку (JPG)</label>
+            <input type="file" id="img-jpg" name="img-jpg" accept=".jpg,.jpeg" />
+          </div>
+          <div class="form__item form__item-file">
+            <label for="img-webp">Завантажити картинку (WEBP)</label>
+            <input type="file" id="img-webp" name="img-webp" accept=".webp" />
+          </div>
+          <button class="form__send-btn btn gradient" type="submit">
+            <p>Зберегти</p>
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 </div>
 
+          <div class="pop-up-pay pop-up">
+  <div class="pop-up__backdrop"></div>
+
+  <div class="container">
+    <div class="pop-up__content">
+      <div class="pop-up__head">
+        <h2 class="pop-up__subtitle subtitle">Оплата потреб</h2>
+      </div>
+
+      <div class="pop-up__form form">
+        <form autocomplete="off" id="form-pay">
+          <div class="form__item">
+            <label class="form__item-label">Номер картки</label>
+            <input type="text" class="form__item-input card-numb" id="card-numb" name="card-numb" placeholder="0000 0000 0000 0000" autocomplete="off" inputmode="numeric" />
+          </div>
+          <div class="form__dete-and-cvv">
+            <div class="form__item">
+              <label class="form__item-label">Термін дії</label>
+              <input type="text" class="form__item-input date" id="date" placeholder="01/01" autocomplete="off" inputmode="numeric" />
+            </div>
+            <div class="form__item">
+              <label class="form__item-label">CVV</label>
+              <input type="password" class="form__item-input cvv" id="cvv" placeholder="000" autocomplete="off" inputmode="numeric" />
+            </div>
+          </div>
+          <div class="form__item">
+            <label class="form__item-label">Власник картки (ENG)</label>
+            <input type="text" class="form__item-input" id="name" name="name" placeholder="Ivan" autocomplete="off" />
+          </div>
+          <a href="#" class="form__send">
+            <button class="form__send-btn btn gradient" type="submit">
+              <p>Надіслати</p>
+            </button>
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </div>
       </div>
       <footer class="footer">
   <div class="container">
