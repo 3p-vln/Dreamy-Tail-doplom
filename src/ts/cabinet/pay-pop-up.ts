@@ -91,12 +91,6 @@ export class PayPopup {
           errorMessage: 'Мінімальна кількість літер 2',
         },
       ])
-      .addField('#checkbox', [
-        {
-          rule: 'required',
-          errorMessage: 'Необхідно погодитись з умовами',
-        },
-      ])
       .onSuccess((event: SubmitEvent) => {
         event.preventDefault();
         this.onFormSubmit();
