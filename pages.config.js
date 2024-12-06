@@ -29,6 +29,18 @@ const pages = [
     name: 'catalog',
     path: resolve(__dirname, 'catalog.html'),
   },
+  {
+    name: 'one-pet',
+    path: resolve(__dirname, 'one-pet.html'),
+  },
+  {
+    name: 'cabinet-user',
+    path: resolve(__dirname, 'cabinet-user.html'),
+  },
+  {
+    name: 'cabinet-admin',
+    path: resolve(__dirname, 'cabinet-admin.html'),
+  },
 ];
 
 export default pages;
