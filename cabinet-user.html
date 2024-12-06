@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <load ="./src/html/components/head.htm" title="Особистий кабінет" styles="cabinet-user" />
+  <body>
+    <div class="wrapper">
+      <load ="./src/html/components/header.htm" />
+      <div class="page">
+        <load ="./src/html/cabinet/background.html" />
+        <div class="cabinet-tabs">
+          <div class="container">
+            <div class="cabinet-tabs__content">
+              <div class="cabinet-tabs__tabs tabs">
+                <load ="./src/html/cabinet/cabinet-tabs.html" />
+                <div class="tabs__content">
+                  <div class="tabs__item" id="main-info">
+                    <load ="./src/html/cabinet/main-info.html" />
+                  </div>
+                  <div class="tabs__item" id="my-pet">
+                    <div class="my-pet">
+                      <div class="list"></div>
+                    </div>
+                  </div>
+                  <div class="tabs__item" id="pay-for-pat">
+                    <load ="./src/html/cabinet/pay-for-pat.html" />
+                  </div>
+                  <div class="tabs__item" id="massage">3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <load ="./src/html/cabinet/pop-up-edit-info.html" />
+        </div>
+      </div>
+      <load ="./src/html/components/footer.htm" />
+    </div>
+
+    <load ="./src/img/sprite.html" />
+    <script type="module" src="./src/ts/script.ts"></script>
+    <script type="module" src="./src/ts/cabinet-user.ts"></script>
+  </body>
+</html>

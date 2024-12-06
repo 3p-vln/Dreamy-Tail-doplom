@@ -43,7 +43,6 @@ export class RenderCards {
         });
       });
 
-      console.log(this.patsArr);
       this.renderPat(this.patsArr);
     } catch (error) {
       console.error(error);

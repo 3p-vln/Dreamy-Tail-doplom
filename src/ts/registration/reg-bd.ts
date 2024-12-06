@@ -45,6 +45,7 @@ export class AccountManager {
 
       await this.saveUserToDatabase(uid, 'user', email, name, surname, phone);
       console.log(uid);
+      window.location.href = '/Dreamy-Tail-doplom/cabinet-user.html';
     } catch (error) {
       console.error('There was an error:', error);
       this.showLoginError(error);

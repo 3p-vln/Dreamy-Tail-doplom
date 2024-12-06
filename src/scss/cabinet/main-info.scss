@@ -1,0 +1,66 @@
+.main-info {
+  margin-top: 50px;
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    max-width: 950px;
+
+    @include media-breakpoint-down(xs) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    @include media-breakpoint-down(xs) {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  .name,
+  .surname,
+  .email,
+  .phone {
+    font-size: clamp(16px, 2.5vw, 20px);
+    line-height: 24px;
+
+    &__title {
+      color: $gray4Color;
+      text-transform: uppercase;
+      font-weight: 600;
+      max-width: 240px;
+      width: 100%;
+
+      @include media-breakpoint-down(xs) {
+        max-width: fit-content;
+      }
+    }
+
+    &__db {
+      color: $whiteColor;
+    }
+  }
+
+  .btn {
+    color: #000;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-weight: 700;
+  }
+}

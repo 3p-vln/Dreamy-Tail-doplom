@@ -40,11 +40,11 @@ export class AuthHandler {
 
       if (currentUser) {
         document.cookie = `UID=${userUid}`;
-        // if (currentUser.role === 'admin') {
-        //   console.log(currentUser.role);
-        // } else {
-        //   console.log(currentUser.role);
-        // }
+        if (currentUser.role === 'admin') {
+          // window.location.href = '/Dreamy-Tail-doplom/cabinet-user.html';
+        } else {
+          window.location.href = '/Dreamy-Tail-doplom/cabinet-user.html';
+        }
       } else {
         alert('Користувач не зареєстрований');
       }

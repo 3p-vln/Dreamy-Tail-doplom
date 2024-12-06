@@ -13,9 +13,8 @@ export class Popup {
     this.addEventListeners();
     this.openPopup();
   }
-  // Додаємо події для відкриття та закриття попапа
+
   private addEventListeners(): void {
-    // Закриття попапа при натисканні на фон
     if (this.backdrop) {
       this.backdrop.addEventListener('click', () => this.closePopup());
     }

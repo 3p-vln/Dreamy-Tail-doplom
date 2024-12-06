@@ -21,13 +21,15 @@ export class AddPetToUser {
         if (this.uid) {
           this.fetchUsers().then((currentUser) => {
             if (currentUser) {
-              this.addPatToUser(this.petId, currentUser.id);
+              this.addPatToUser(this.petId, currentUser.id).then(() => {
+                window.location.href = '/Dreamy-Tail-doplom/cabinet-user.html';
+              });
             } else {
-              window.location.href = '/Dreamy-Tail-doplom/index.html';
+              window.location.href = '/Dreamy-Tail-doplom/registration.html';
             }
           });
         } else {
-          window.location.href = '/Dreamy-Tail-doplom/index.html';
+          window.location.href = '/Dreamy-Tail-doplom/registration.html';
         }
       });
     }

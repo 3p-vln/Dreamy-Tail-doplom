@@ -14,8 +14,10 @@ export class Tab {
       btn.addEventListener('click', () => this.onTabClick(btn));
     });
 
+    this.loadActiveTab();
+
     const firstTab = this.tabsBtn[0];
-    if (firstTab) {
+    if (firstTab && !localStorage.getItem('activeTab')) {
       firstTab.click();
     }
 
@@ -37,6 +39,7 @@ export class Tab {
       currentTab.classList.add('active');
 
       this.updateURL(tabId);
+      if (tabId) this.saveActiveTab(tabId);
     }
   }
 
@@ -48,8 +51,8 @@ export class Tab {
   private updateURL(tabId: string | null) {
     if (tabId) {
       const url = new URL(window.location.href);
-      url.searchParams.set('tab', tabId); // Set the 'tab' query parameter
-      history.pushState(null, '', url.toString()); // Update the URL without reloading the page
+      url.searchParams.set('tab', tabId);
+      history.pushState(null, '', url.toString());
     }
   }
 
@@ -60,6 +63,25 @@ export class Tab {
     if (tabIdFromURL) {
       const matchingBtn = Array.from(this.tabsBtn).find((btn) => btn.getAttribute('data-tab') === tabIdFromURL);
       const matchingTab = matchingBtn ? document.querySelector<HTMLElement>(tabIdFromURL) : null;
+
+      if (matchingBtn && matchingTab) {
+        this.resetActiveStates();
+        matchingBtn.classList.add('active');
+        matchingTab.classList.add('active');
+        this.saveActiveTab(tabIdFromURL);
+      }
+    }
+  }
+
+  private saveActiveTab(tabId: string) {
+    localStorage.setItem('activeTab', tabId);
+  }
+
+  private loadActiveTab() {
+    const activeTab = localStorage.getItem('activeTab');
+    if (activeTab) {
+      const matchingBtn = Array.from(this.tabsBtn).find((btn) => btn.getAttribute('data-tab') === activeTab);
+      const matchingTab = matchingBtn ? document.querySelector<HTMLElement>(activeTab) : null;
 
       if (matchingBtn && matchingTab) {
         this.resetActiveStates();
