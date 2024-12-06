@@ -1,0 +1,46 @@
+<div class="pop-up-pay pop-up">
+  <div class="pop-up__backdrop"></div>
+
+  <div class="container">
+    <div class="pop-up__content">
+      <div class="pop-up__head">
+        <h2 class="pop-up__subtitle subtitle">Оплата потреб</h2>
+      </div>
+
+      <div class="pop-up__form form">
+        <form autocomplete="off" id="form-pay">
+          <div class="form__item">
+            <label class="form__item-label">Номер картки</label>
+            <input type="text" class="form__item-input card-numb" id="card-numb" name="card-numb" placeholder="0000 0000 0000 0000" autocomplete="off" inputmode="numeric" />
+          </div>
+          <div class="form__dete-and-cvv">
+            <div class="form__item">
+              <label class="form__item-label">Термін дії</label>
+              <input type="text" class="form__item-input date" id="date" placeholder="01/01" autocomplete="off" inputmode="numeric" />
+            </div>
+            <div class="form__item">
+              <label class="form__item-label">CVV</label>
+              <input type="password" class="form__item-input cvv" id="cvv" placeholder="000" autocomplete="off" inputmode="numeric" />
+            </div>
+          </div>
+          <div class="form__item">
+            <label class="form__item-label">Власник картки (ENG)</label>
+            <input type="text" class="form__item-input" id="name" name="name" placeholder="Ivan" autocomplete="off" />
+          </div>
+          <a href="#" class="form__send">
+            <button class="form__send-btn btn gradient" type="submit">
+              <p>Надіслати</p>
+            </button>
+          </a>
+          <div class="form__agree">
+            <label class="form__agree-label">
+              <input type="checkbox" class="form__agree-checkbox" id="checkbox" autocomplete="off" />
+              <span class="form__agree-checkstyle"></span>
+              Я згоден з <a href="#">Політикою конфіденційності</a> та <a href="#">Умовами використання</a>
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

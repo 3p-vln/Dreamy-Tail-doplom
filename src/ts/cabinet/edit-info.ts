@@ -1,6 +1,5 @@
-import { arrayUnion, collection, doc, getDocs, updateDoc } from 'firebase/firestore';
-import { auth, db } from '../modules/firebase';
-import { updateEmail } from 'firebase/auth';
+import { collection, doc, getDocs, updateDoc } from 'firebase/firestore';
+import { db } from '../modules/firebase';
 import JustValidate from 'just-validate';
 import Inputmask from 'inputmask';
 import { Popup } from '../donate/pop-up';

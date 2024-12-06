@@ -1,15 +1,4 @@
-.payment {
-  &__content {
-    margin: 0 auto;
-    margin-top: 97px;
-    margin-bottom: 60px;
-    max-width: 1110px;
-    color: $whiteTwo;
-
-    @include media-breakpoint-down(sm) {
-    }
-  }
-
+.pop-up-pay {
   .form {
     &__subtitle {
       max-width: fit-content;
@@ -21,23 +10,6 @@
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-    }
-
-    &__tabs {
-      margin-top: 23px;
-
-      .tabs {
-        &__nav {
-          grid-template-columns: repeat(2, 1fr);
-          padding: 7px 8px;
-
-          &-btn {
-            padding: 16px 19px;
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
     }
 
     &__item {
@@ -116,12 +88,9 @@
 
     &__dete-and-cvv {
       display: flex;
-      //   max-width: 410px;
       gap: 16px;
 
       .form__item {
-        // max-width: 197px;
-
         @include media-breakpoint-down(sm) {
           width: 100%;
           min-width: 0;
@@ -239,38 +208,6 @@
 
       @include media-breakpoint-down(xs) {
         padding-top: 15px;
-      }
-    }
-
-    &__copy {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-radius: 9px;
-      padding: 21px 32px 22px;
-      height: 64px;
-      font-weight: bold;
-      line-height: 21px;
-      font-size: 16px;
-      color: $whiteTwo;
-      background: $backgroundSecond;
-      gap: 15px;
-
-      .copy-text {
-        overflow: hidden;
-        width: 100%;
-        text-overflow: ellipsis;
-      }
-
-      .copy-btn {
-        width: 18px;
-        height: 18px;
-        background: none;
-
-        svg {
-          width: 18px;
-          height: 18px;
-        }
       }
     }
   }

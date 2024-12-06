@@ -1,5 +1,6 @@
-import { collection, doc, getDocs, updateDoc } from 'firebase/firestore';
+import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore';
 import { db } from '../modules/firebase';
+import { PayPopup } from './pay-pop-up';
 
 export class PayForPet {
   private myPetContent: HTMLElement;
@@ -86,13 +87,10 @@ export class PayForPet {
       if (item.owner === true) {
         console.log('Rendering pet:', item);
 
-        // Генерация списка needs
         const needsListHtml = item.needs.map((need: { item: string; cost: number }) => `<li class="pet-need__list-item">${need.item}: <span>${need.cost} грн</span></li>`).join('');
 
-        // Расчет общей стоимости
         const totalCost = item.needs.reduce((sum: number, need: { cost: number }) => sum + need.cost, 0);
 
-        // Формирование HTML для карточки питомца
         const cardHtml = `
           <div class="pay-for-pet__one-pet pet-need ${item.id}">
             <h3 class="pet-need__name title">${item.name}</h3>
@@ -103,7 +101,7 @@ export class PayForPet {
   
             <div class="pet-need__pay">
               <p class="pet-need__summ">Всього: <span>${totalCost} грн</span></p>
-              <button class="pet-need__pay-btn btn gradient">Сплатити</button>
+              <button class="pet-need__pay-btn btn gradient" data-pet-id="${item.id}">Сплатити</button>
             </div>
           </div>
         `;
@@ -111,32 +109,40 @@ export class PayForPet {
         this.myPetContent.insertAdjacentHTML('beforeend', cardHtml);
       }
     });
+
+    this.addPayButtonListeners();
   }
 
-  //   private async removePet(petId: string) {
-  //     if (!this.currentUser || !this.uid) {
-  //       console.error('User not authenticated or user data not loaded.');
-  //       return;
-  //     }
+  private addPayButtonListeners() {
+    const payButtons = this.myPetContent.querySelectorAll('.pet-need__pay-btn');
+    payButtons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        const petId = (event.target as HTMLButtonElement).dataset.petId;
+        this.onPayButtonClick(petId!);
+      });
+    });
+  }
 
-  //     try {
-  //       const userRef = doc(db, 'users', this.currentUser.id);
-  //       const updatedMyPet = this.currentUser.myPet.filter((id) => id !== petId);
-  //       await updateDoc(userRef, { myPet: updatedMyPet });
+  private onPayButtonClick(petId: string) {
+    const payPopup = new PayPopup(); // Создание экземпляра PayPopup
+    payPopup.openPopup();
 
-  //       this.currentUser.myPet = updatedMyPet;
+    payPopup.onFormSubmit = async () => {
+      await this.removePaidNeeds(petId);
+      payPopup.closePopup();
+      this.init();
+    };
+  }
 
-  //       const petRef = doc(db, 'pats', petId);
-  //       await updateDoc(petRef, { owner: false });
+  private async removePaidNeeds(petId: string) {
+    const petNeedsCollection = collection(db, `pats/${petId}/need`);
+    const needsSnapshot = await getDocs(petNeedsCollection);
 
-  //       const petElement = this.myPetContent.querySelector(`.list__item.pet.${petId}`);
-  //       if (petElement) {
-  //         petElement.remove();
-  //       }
+    for (const needDoc of needsSnapshot.docs) {
+      const needDocRef = doc(db, `pats/${petId}/need/${needDoc.id}`);
+      await deleteDoc(needDocRef); // Удаление документа через deleteDoc
+    }
 
-  //       console.log(`Pet with ID ${petId} successfully removed.`);
-  //     } catch (error) {
-  //       console.error('Error removing pet:', error);
-  //     }
-  //   }
+    console.log(`Потребности питомца с ID ${petId} удалены`);
+  }
 }
