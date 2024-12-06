@@ -1,4 +1,4 @@
-import { db } from '../modules/firebase';
+import { db } from '../../modules/firebase';
 import { collection, getDocs, doc, updateDoc } from 'firebase/firestore';
 
 export class MyPet {
@@ -67,18 +67,20 @@ export class MyPet {
 
       const myPets = allPets.filter((pet) => this.currentUser!.myPet.includes(pet.id));
       console.log(myPets);
-      this.renderPat(myPets);
+      this.renderPat(myPets).then(() => {
+        this.addEventListener();
+      });
     } catch (error) {
       console.error(error);
     }
   }
 
-  private renderPat(pat: any[]) {
+  private async renderPat(pat: any[]) {
     console.log('Rendering pets:', pat);
     this.myPetContent.innerHTML = '';
 
     pat.forEach((item) => {
-      if (item.owner === true) {
+      if (item.owner) {
         console.log('Rendering pet:', item);
 
         const cardHtml = `
@@ -103,22 +105,6 @@ export class MyPet {
 
         this.myPetContent.insertAdjacentHTML('beforeend', cardHtml);
       }
-    });
-
-    const buttons = this.myPetContent.querySelectorAll('.pet__page');
-    if (buttons.length === 0) {
-      console.error('No buttons found with class .pet__page');
-      return;
-    }
-
-    buttons.forEach((button) => {
-      button.addEventListener('click', (event) => {
-        const petId = (event.target as HTMLElement).getAttribute('data-id');
-        console.log(petId);
-        if (petId) {
-          this.removePet(petId);
-        }
-      });
     });
   }
 
@@ -147,5 +133,23 @@ export class MyPet {
     } catch (error) {
       console.error('Error removing pet:', error);
     }
+  }
+
+  private addEventListener() {
+    const buttons = this.myPetContent.querySelectorAll('.pet__page');
+    if (buttons.length === 0) {
+      console.error('No buttons found with class .pet__page');
+      return;
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        const petId = (event.target as HTMLElement).getAttribute('data-id');
+        console.log(petId);
+        if (petId) {
+          this.removePet(petId);
+        }
+      });
+    });
   }
 }

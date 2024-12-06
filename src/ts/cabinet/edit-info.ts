@@ -22,7 +22,7 @@ export class EditInfo {
 
   init() {
     this.btn.addEventListener('click', () => {
-      new Popup();
+      new Popup('.pop-up-info');
       this.applyMasks();
       this.initializeValidation();
     });

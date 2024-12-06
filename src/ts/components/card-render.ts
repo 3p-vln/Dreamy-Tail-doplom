@@ -10,7 +10,7 @@ export class RenderCards {
     name: string;
     shortInfo: string;
     view: string;
-    owner: boolean;
+    owner: string;
   }[];
 
   constructor(cardHolder: string) {
@@ -39,7 +39,7 @@ export class RenderCards {
           name: data.name || 'No Name',
           shortInfo: data.shortInfo || '',
           view: data.view || '',
-          owner: data.owner || false,
+          owner: data.owner || '',
         });
       });
 
@@ -53,7 +53,7 @@ export class RenderCards {
     this.cardHolder.innerHTML = '';
 
     pat.forEach((item) => {
-      if (item.owner === false) {
+      if (!item.owner) {
         const cardHtml = `
           <a href="one-pet.html?id=${item.id}" class="list__item pet ${item.id}">
             <div class="pet__info">

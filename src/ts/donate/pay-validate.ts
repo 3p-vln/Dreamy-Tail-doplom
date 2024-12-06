@@ -71,7 +71,7 @@ class FormValidation {
         },
       ])
       .onSuccess((event: SubmitEvent) => {
-        new Popup();
+        new Popup('.pop-up');
         // очислить форму
         (event.target as HTMLFormElement).reset();
       });

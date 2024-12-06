@@ -1,5 +1,5 @@
 import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore';
-import { db } from '../modules/firebase';
+import { db } from '../../modules/firebase';
 import { PayPopup } from './pay-pop-up';
 
 export class PayForPet {
@@ -84,7 +84,7 @@ export class PayForPet {
     this.myPetContent.innerHTML = '';
 
     pat.forEach((item) => {
-      if (item.owner === true) {
+      if (item.owner) {
         console.log('Rendering pet:', item);
 
         const needsListHtml = item.needs.map((need: { item: string; cost: number }) => `<li class="pet-need__list-item">${need.item}: <span>${need.cost} грн</span></li>`).join('');
@@ -124,12 +124,13 @@ export class PayForPet {
   }
 
   private onPayButtonClick(petId: string) {
-    const payPopup = new PayPopup(); // Создание экземпляра PayPopup
+    const payPopup = new PayPopup();
     payPopup.openPopup();
 
     payPopup.onFormSubmit = async () => {
       await this.removePaidNeeds(petId);
       payPopup.closePopup();
+      location.reload();
       this.init();
     };
   }
@@ -140,7 +141,7 @@ export class PayForPet {
 
     for (const needDoc of needsSnapshot.docs) {
       const needDocRef = doc(db, `pats/${petId}/need/${needDoc.id}`);
-      await deleteDoc(needDocRef); // Удаление документа через deleteDoc
+      await deleteDoc(needDocRef);
     }
 
     console.log(`Потребности питомца с ID ${petId} удалены`);

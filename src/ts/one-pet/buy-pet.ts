@@ -70,7 +70,7 @@ export class AddPetToUser {
       const petDocRef = doc(db, 'pats', petId);
 
       await updateDoc(petDocRef, {
-        owner: true,
+        owner: userId,
       });
     } catch (error) {
       console.error(error);

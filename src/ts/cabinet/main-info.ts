@@ -43,7 +43,6 @@ export class MainInfo {
 
     const findUser = allUsers.find((user) => user.uid === this.uid);
     this.currentUser = findUser;
-    console.log(this.currentUser);
   }
 
   private async showInfo() {

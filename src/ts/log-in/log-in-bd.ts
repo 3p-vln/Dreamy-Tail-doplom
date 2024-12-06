@@ -41,19 +41,19 @@ export class AuthHandler {
       if (currentUser) {
         document.cookie = `UID=${userUid}`;
         if (currentUser.role === 'admin') {
-          // window.location.href = '/Dreamy-Tail-doplom/cabinet-user.html';
+          window.location.href = '/Dreamy-Tail-doplom/cabinet-admin.html?tab=%23main-info';
         } else {
-          window.location.href = '/Dreamy-Tail-doplom/cabinet-user.html';
+          window.location.href = '/Dreamy-Tail-doplom/cabinet-user.html?tab=%23main-info';
         }
       } else {
         alert('Користувач не зареєстрований');
       }
     } catch (error) {
-      this.showLoginError(error);
+      this.showLoginError();
     }
   }
 
-  private showLoginError(error: any) {
+  private showLoginError() {
     let errorMessage = 'Невірно введені дані';
     alert(errorMessage);
   }

@@ -208,21 +208,19 @@
     justify-content: center;
     gap: 8px;
 
-    @media (max-width: 1100px) {
-      .select__content {
-        display: none;
-      }
-
-      .authorization__btn,
-      .registration__btn {
-        display: none;
+    .authorization__btn,
+    .registration__btn,
+    .cabinet__btn {
+      @media (max-width: 1100px) {
+        display: none !important;
       }
     }
   }
 
   .authorization,
   .registration,
-  .cabinet {
+  .cabinet,
+  .log-out {
     &__btn {
       border-radius: 12px;
       padding: 14px 22px;

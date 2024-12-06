@@ -2,8 +2,8 @@ export class Popup {
   private popUp: HTMLElement;
   private backdrop: HTMLElement;
 
-  constructor() {
-    this.popUp = document.querySelector('.pop-up') as HTMLElement;
+  constructor(popUpClass: string) {
+    this.popUp = document.querySelector(popUpClass) as HTMLElement;
     this.backdrop = document.querySelector('.pop-up__backdrop') as HTMLElement;
 
     this.init();

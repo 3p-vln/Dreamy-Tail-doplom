@@ -1,7 +1,7 @@
 import { EditInfo } from './cabinet/edit-info';
 import { MainInfo } from './cabinet/main-info';
-import { MyPet } from './cabinet/my-pet';
-import { PayForPet } from './cabinet/pay-for-pet';
+import { MyPet } from './cabinet/user/my-pet';
+import { PayForPet } from './cabinet/user/pay-for-pet';
 import { Tab } from './cabinet/tabs';
 
 document.addEventListener('DOMContentLoaded', async () => {

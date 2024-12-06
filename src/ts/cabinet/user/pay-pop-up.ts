@@ -114,12 +114,6 @@ export class PayPopup {
   }
 
   onFormSubmit() {
-    console.log('Форма успешно отправлена!');
-
-    const formData = new FormData(this.formElement);
-    const data = Object.fromEntries(formData.entries());
-    console.log('Данные формы:', data);
-
     if (this.onFormSubmitCallback) {
       this.onFormSubmitCallback();
     }

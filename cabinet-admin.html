@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <load ="./src/html/components/head.htm" title="Особистий кабінет" styles="cabinet-user" />
+  <load ="./src/html/components/head.htm" title="Особистий кабінет" styles="cabinet-admin" />
   <body>
     <div class="wrapper">
       <load ="./src/html/components/header.htm" />
@@ -10,25 +10,25 @@
           <div class="container">
             <div class="cabinet-tabs__content">
               <div class="cabinet-tabs__tabs tabs">
-                <load ="./src/html/cabinet/user/cabinet-tabs.html" />
+                <load ="./src/html/cabinet/admin/cabinet-tabs.html" />
                 <div class="tabs__content">
                   <div class="tabs__item" id="main-info">
                     <load ="./src/html/cabinet/main-info.html" />
                   </div>
-                  <div class="tabs__item" id="my-pet">
-                    <div class="my-pet">
-                      <div class="list"></div>
+                  <div class="tabs__item" id="all-pet">
+                    <div class="all-pet">
+                      <button class="all-pet__add btn gradient">Додати нову тварину</button>
+                      <div class="list">1</div>
                     </div>
                   </div>
-                  <div class="tabs__item" id="pay-for-pat">
-                    <load ="./src/html/cabinet/user/pay-for-pat.html" />
-                  </div>
-                  <div class="tabs__item" id="massage">3</div>
+                  <div class="tabs__item" id="add-need-for-pat">2</div>
+                  <div class="tabs__item" id="users">3</div>
                 </div>
               </div>
             </div>
           </div>
           <load ="./src/html/cabinet/pop-up-edit-info.html" />
+          <load ="./src/html/cabinet/admin/add-new-pet.html" />
           <load ="./src/html/cabinet/user/pop-up-pay.html" />
         </div>
       </div>
@@ -37,6 +37,6 @@
 
     <load ="./src/img/sprite.html" />
     <script type="module" src="./src/ts/script.ts"></script>
-    <script type="module" src="./src/ts/cabinet-user.ts"></script>
+    <script type="module" src="./src/ts/cabinet-admin.ts"></script>
   </body>
 </html>

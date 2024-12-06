@@ -1,0 +1,151 @@
+.pop-up {
+  align-items: flex-start;
+
+  &__content {
+    margin-top: 180px;
+  }
+
+  .form {
+    max-width: 500px;
+    width: 100%;
+    margin-top: 20px;
+
+    &__item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding-top: 15px;
+      gap: 7px;
+      width: 100%;
+
+      .just-validate-error-label {
+        position: absolute;
+        right: 50%;
+        top: 10px;
+        border-radius: 7px;
+        padding: 8px;
+        font-weight: bold;
+        text-wrap: nowrap;
+        transform: translateX(50%);
+        z-index: 3;
+        font-size: 14px;
+        background: $rainbowBtnGradient;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          top: 28px;
+          clip-path: polygon(0 0, 53% 100%, 100% 0);
+          width: 10px;
+          height: 10px;
+          transform: translateX(-50%);
+          z-index: 3;
+          background: $rainbowBtnGradient;
+        }
+      }
+
+      &-label {
+        font-weight: normal;
+        line-height: 21px;
+        font-size: 14px;
+        color: $gray6Color;
+        font-weight: 700;
+      }
+
+      &-input {
+        display: flex;
+        align-items: center;
+        border-radius: 9px;
+        padding: 21px 32px 22px;
+        height: 64px;
+        font-weight: normal;
+        line-height: 21px;
+        font-size: 16px;
+        color: $gray6Color;
+        background: $backgroundSecond;
+      }
+
+      &-textarea {
+        display: flex;
+        align-items: center;
+        border-radius: 9px;
+        padding: 21px 32px 22px;
+        height: 182px;
+        font-weight: normal;
+        line-height: 21px;
+        resize: none;
+        font-size: 16px;
+        color: $gray6Color;
+        background: $backgroundSecond;
+      }
+
+      @include media-breakpoint-down(sm) {
+        max-width: none;
+      }
+    }
+
+    &-file {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      input[type='file'] {
+        display: none;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 9px;
+        background: $backgroundSecond;
+        color: $gray6Color;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 16px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background: lighten($backgroundSecond, 10%);
+        }
+
+        &::after {
+          content: ' (натисніть, щоб вибрати файл)';
+          font-size: 12px;
+          font-weight: normal;
+          color: $gray4Color;
+        }
+      }
+
+      .file-preview {
+        margin-top: 10px;
+        max-width: 100%;
+        height: auto;
+        border-radius: 9px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+      }
+    }
+
+    &__send-btn {
+      margin: 0 auto;
+      margin-top: 15px;
+      padding: 18px 0 19px;
+      width: 410px;
+
+      p {
+        font-family: ProximaNova;
+        font-weight: bold;
+        line-height: 26.5px;
+        font-size: 18px;
+        color: $background;
+      }
+
+      @include media-breakpoint-down(xs) {
+        width: 100%;
+      }
+    }
+  }
+}
