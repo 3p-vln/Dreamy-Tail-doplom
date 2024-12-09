@@ -16,7 +16,6 @@ export class MyPet {
   init() {
     this.fetchUsers().then(() => {
       this.getPets();
-      console.log(this.myPetContent);
     });
   }
 
@@ -42,7 +41,6 @@ export class MyPet {
 
     const findUser = allUsers.find((user) => user.uid === this.uid);
     this.currentUser = findUser;
-    console.log(this.currentUser);
   }
 
   private async getPets() {
@@ -66,7 +64,6 @@ export class MyPet {
       });
 
       const myPets = allPets.filter((pet) => this.currentUser!.myPet.includes(pet.id));
-      console.log(myPets);
       this.renderPat(myPets).then(() => {
         this.addEventListener();
       });
@@ -76,13 +73,10 @@ export class MyPet {
   }
 
   private async renderPat(pat: any[]) {
-    console.log('Rendering pets:', pat);
     this.myPetContent.innerHTML = '';
 
     pat.forEach((item) => {
       if (item.owner) {
-        console.log('Rendering pet:', item);
-
         const cardHtml = `
           <a class="list__item pet ${item.id}">
             <div class="pet__info">
@@ -128,8 +122,6 @@ export class MyPet {
       if (petElement) {
         petElement.remove();
       }
-
-      console.log(`Pet with ID ${petId} successfully removed.`);
     } catch (error) {
       console.error('Error removing pet:', error);
     }
@@ -145,7 +137,7 @@ export class MyPet {
     buttons.forEach((button) => {
       button.addEventListener('click', (event) => {
         const petId = (event.target as HTMLElement).getAttribute('data-id');
-        console.log(petId);
+
         if (petId) {
           this.removePet(petId);
         }

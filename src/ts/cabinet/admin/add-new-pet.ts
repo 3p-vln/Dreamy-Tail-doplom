@@ -69,11 +69,9 @@ export class AddNewPet {
     }
 
     try {
-      // Upload the images
       const imgUrlJpg = await this.uploadImage(imgFileJpg, `pats/${Date.now()}.jpg`);
       const imgUrlWebP = await this.uploadImage(imgFileWebP, `pats/${Date.now()}.webp`);
 
-      // Add the pet data to Firestore
       await addDoc(collection(db, 'pats'), {
         name: nameInp,
         breed: breedInp,
@@ -85,8 +83,7 @@ export class AddNewPet {
         view: viewInp,
       });
 
-      console.log('Pet added successfully');
-      location.reload(); // Reload the page after successful submission
+      location.reload();
     } catch (error) {
       console.error('Error adding pet data:', error);
     }

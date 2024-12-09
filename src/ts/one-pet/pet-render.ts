@@ -65,7 +65,6 @@ export class RenderPet {
         this.pet.push(foundPet);
       }
 
-      console.log(this.pet);
       this.renderPat(this.pet);
     } catch (error) {
       console.error(error);

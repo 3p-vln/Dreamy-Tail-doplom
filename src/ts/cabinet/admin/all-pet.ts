@@ -1,6 +1,7 @@
 import { db } from '../../modules/firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { DeletePet } from './del-pet';
+import { EditPet } from './edit-pet';
 
 export class AllPet {
   private cardHolder: HTMLElement;
@@ -73,7 +74,7 @@ export class AllPet {
   
           <div class="pet__btns">
             <a href="one-pet.html?id=${item.id}" class="pet__page btn gradient">Переглянути</a>
-            <button class="pet__edit btn gradient">Редагувати</button>
+            <button class="pet__edit btn gradient" data-id="${item.id}">Редагувати</button>
             <button class="pet__del btn gradient" data-id="${item.id}" data-img="${item.img}" data-img-webp="${item.imgWebP}">Видалити</button>
           </div>
         </div>
@@ -82,8 +83,8 @@ export class AllPet {
       this.cardHolder.insertAdjacentHTML('beforeend', cardHtml);
     });
 
-    // Add event listener for delete buttons
     this.addDeleteEventListeners();
+    this.addEditEventListeners();
   }
 
   addDeleteEventListeners() {
@@ -96,7 +97,21 @@ export class AllPet {
         const petImageWebP = (e.target as HTMLButtonElement).getAttribute('data-img-webp');
 
         if (petId && petImage && petImageWebP) {
-          new DeletePet(petId, petImage, petImageWebP); // Pass both petId and image paths to DeletePet
+          new DeletePet(petId, petImage, petImageWebP);
+        }
+      });
+    });
+  }
+
+  addEditEventListeners() {
+    const editButtons = this.cardHolder.querySelectorAll('.pet__edit');
+
+    editButtons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const petId = (e.target as HTMLButtonElement).getAttribute('data-id');
+
+        if (petId) {
+          new EditPet(petId, '#form-edit-pet');
         }
       });
     });

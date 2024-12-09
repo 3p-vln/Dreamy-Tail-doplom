@@ -66,9 +66,9 @@ export class BtnCabinet {
     if (currentUser) {
       cabinetBtns.forEach((cabinet) => {
         if (currentUser.role === 'admin') {
-          cabinet.href = '/cabinet-admin.html';
+          cabinet.href = '/Dreamy-Tail-doplom/cabinet-admin.html?tab=%23main-info';
         } else {
-          cabinet.href = '/cabinet-user.html';
+          cabinet.href = '/Dreamy-Tail-doplom/cabinet-user.html?tab=%23main-info';
         }
       });
     }

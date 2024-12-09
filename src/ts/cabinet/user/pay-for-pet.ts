@@ -17,7 +17,6 @@ export class PayForPet {
   init() {
     this.fetchUsers().then(() => {
       this.getPetsNeed();
-      console.log(this.myPetContent);
     });
   }
 
@@ -72,7 +71,6 @@ export class PayForPet {
       }
 
       const myPets = allPets.filter((pet) => this.currentUser!.myPet.includes(pet.id));
-      console.log(myPets);
       this.renderPatNeed(myPets);
     } catch (error) {
       console.error(error);
@@ -80,13 +78,10 @@ export class PayForPet {
   }
 
   private renderPatNeed(pat: any[]) {
-    console.log('Rendering pets:', pat);
     this.myPetContent.innerHTML = '';
 
     pat.forEach((item) => {
       if (item.owner) {
-        console.log('Rendering pet:', item);
-
         const needsListHtml = item.needs.map((need: { item: string; cost: number }) => `<li class="pet-need__list-item">${need.item}: <span>${need.cost} грн</span></li>`).join('');
 
         const totalCost = item.needs.reduce((sum: number, need: { cost: number }) => sum + need.cost, 0);
@@ -143,7 +138,5 @@ export class PayForPet {
       const needDocRef = doc(db, `pats/${petId}/need/${needDoc.id}`);
       await deleteDoc(needDocRef);
     }
-
-    console.log(`Потребности питомца с ID ${petId} удалены`);
   }
 }

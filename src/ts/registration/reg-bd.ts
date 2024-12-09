@@ -27,7 +27,6 @@ export class AccountManager {
 
   private async saveUserToDatabase(uid: string, role: string, email: string, name: string, surname: string, phone: string): Promise<void> {
     const userRef = await addDoc(collection(db, 'users'), { uid, role, email, name, surname, phone });
-    console.log('Document written with ID: ', userRef.id);
     document.cookie = `UID=${uid}`;
   }
 
@@ -38,13 +37,11 @@ export class AccountManager {
     const surname = this.getElementById(this.surnameInputId).value;
     const phone = this.getElementById(this.phoneInputId).value;
 
-    console.log(email, password, name, surname, phone);
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const uid = userCredential.user.uid;
 
       await this.saveUserToDatabase(uid, 'user', email, name, surname, phone);
-      console.log(uid);
       window.location.href = '/Dreamy-Tail-doplom/cabinet-user.html?tab=%23main-info';
     } catch (error) {
       console.error('There was an error:', error);

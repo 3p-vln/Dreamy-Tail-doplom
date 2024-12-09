@@ -6,9 +6,6 @@
 @import 'components/header';
 @import 'components/footer';
 @import 'components/btn';
-// @import 'components/preloader';
-// @import 'components/select';
-// @import 'components/itemsTabs';
 
 body {
   font-family: ProximaNova;
@@ -37,7 +34,7 @@ body {
 }
 
 .subtitle {
-  max-width: 210px;
+  max-width: fit-content;
   width: fit-content;
   font-family: ProximaNova;
   font-weight: 700;
