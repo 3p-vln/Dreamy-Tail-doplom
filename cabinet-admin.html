@@ -5,14 +5,14 @@
   <link rel="icon" type="image/svg+xml" href="/Dreamy-Tail-doplom/dreamy-tail.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Особистий кабінет</title>
-  <script type="module" crossorigin src="/Dreamy-Tail-doplom/assets/cabinet-admin-DuwLkVI7.js"></script>
-  <link rel="modulepreload" crossorigin href="/Dreamy-Tail-doplom/assets/script-BmuZr8xh.js">
+  <script type="module" crossorigin src="/Dreamy-Tail-doplom/assets/cabinet-admin-B4_1f-oE.js"></script>
+  <link rel="modulepreload" crossorigin href="/Dreamy-Tail-doplom/assets/script-Df4MtpFW.js">
   <link rel="modulepreload" crossorigin href="/Dreamy-Tail-doplom/assets/just-validate.es-C73wyOde.js">
   <link rel="modulepreload" crossorigin href="/Dreamy-Tail-doplom/assets/inputmask-CsGDK5Eu.js">
   <link rel="modulepreload" crossorigin href="/Dreamy-Tail-doplom/assets/pop-up-Cl5BhUHu.js">
-  <link rel="modulepreload" crossorigin href="/Dreamy-Tail-doplom/assets/tabs-DSGezb71.js">
-  <link rel="stylesheet" crossorigin href="/Dreamy-Tail-doplom/assets/script-_qIP27pt.css">
-  <link rel="stylesheet" crossorigin href="/Dreamy-Tail-doplom/assets/cabinet-admin-CpvhBeuF.css">
+  <link rel="modulepreload" crossorigin href="/Dreamy-Tail-doplom/assets/tabs-B9kuZmwq.js">
+  <link rel="stylesheet" crossorigin href="/Dreamy-Tail-doplom/assets/script-BgYWTe0-.css">
+  <link rel="stylesheet" crossorigin href="/Dreamy-Tail-doplom/assets/cabinet-admin-DtymHyOl.css">
 </head>
 
   <body>
@@ -127,11 +127,32 @@
                   <div class="tabs__item" id="all-pet">
                     <div class="all-pet">
                       <button class="all-pet__add btn gradient">Додати нову тварину</button>
-                      <div class="list">1</div>
+                      <div class="list"></div>
                     </div>
                   </div>
-                  <div class="tabs__item" id="add-need-for-pat">2</div>
-                  <div class="tabs__item" id="users">3</div>
+                  <div class="tabs__item" id="add-need-for-pat">
+                    <div class="needs-for-pet"></div>
+
+                  </div>
+                  <div class="tabs__item" id="users">
+                    <div class="all-users">
+  <!-- <div class="all-users__one-user one-user">
+    <p class="one-user__item uid">UID: <span>74GlP0ZJ3pPXVVkcSyOzlmr5YTp2</span></p>
+    <p class="one-user__item id">ID: <span>9JnKSFKROUcD9G4AjzCU</span></p>
+    <p class="one-user__item user-name">Ім'я: <span>Адмін</span></p>
+    <p class="one-user__item user-surname">Фамілія: <span>Адмін</span></p>
+    <p class="one-user__item user-email">Пошта: <span>admin@gmail.com</span></p>
+    <p class="one-user__item user-phone">Номер телефону: <span>+12 (345) 678 90 90</span></p>
+    <p class="one-user__item user-role">Роль: <span>admin</span></p>
+    <div class="one-user__item btns">
+      <button class="btns__write btn gradient">Написати повідолення</button>
+      <button class="btns__edit-role btn gradient">Зміна ролі</button>
+      <button class="btns__remove btn gradient">Видалити</button>
+    </div>
+  </div> -->
+</div>
+
+                  </div>
                 </div>
               </div>
             </div>
@@ -220,40 +241,104 @@
   </div>
 </div>
 
-          <div class="pop-up-pay pop-up">
+          <div class="pop-up-edit-pet pop-up">
   <div class="pop-up__backdrop"></div>
 
   <div class="container">
     <div class="pop-up__content">
       <div class="pop-up__head">
-        <h2 class="pop-up__subtitle subtitle">Оплата потреб</h2>
+        <h2 class="pop-up__subtitle subtitle">Редагування інформації тварини</h2>
       </div>
 
       <div class="pop-up__form form">
-        <form autocomplete="off" id="form-pay">
+        <form autocomplete="off" id="form-edit-pet">
           <div class="form__item">
-            <label class="form__item-label">Номер картки</label>
-            <input type="text" class="form__item-input card-numb" id="card-numb" name="card-numb" placeholder="0000 0000 0000 0000" autocomplete="off" inputmode="numeric" />
-          </div>
-          <div class="form__dete-and-cvv">
-            <div class="form__item">
-              <label class="form__item-label">Термін дії</label>
-              <input type="text" class="form__item-input date" id="date" placeholder="01/01" autocomplete="off" inputmode="numeric" />
-            </div>
-            <div class="form__item">
-              <label class="form__item-label">CVV</label>
-              <input type="password" class="form__item-input cvv" id="cvv" placeholder="000" autocomplete="off" inputmode="numeric" />
-            </div>
+            <label class="form__item-label"> Вид </label>
+            <input type="text" class="form__item-input viev" id="viev" name="viev" placeholder="Кіт" autocomplete="off" />
           </div>
           <div class="form__item">
-            <label class="form__item-label">Власник картки (ENG)</label>
-            <input type="text" class="form__item-input" id="name" name="name" placeholder="Ivan" autocomplete="off" />
+            <label class="form__item-label"> Ім'я </label>
+            <input type="text" class="form__item-input name" id="name-pet" name="name-pet" placeholder="Мася" autocomplete="off" />
           </div>
-          <a href="#" class="form__send">
-            <button class="form__send-btn btn gradient" type="submit">
-              <p>Надіслати</p>
-            </button>
-          </a>
+          <div class="form__item">
+            <label class="form__item-label"> Порода </label>
+            <input type="text" class="form__item-input breed" id="breed" name="breed" placeholder="Безпородний" autocomplete="off" />
+          </div>
+          <div class="form__item">
+            <label class="form__item-label"> Вік </label>
+            <input type="text" class="form__item-input age" id="age" name="age" placeholder="9 років" autocomplete="off" />
+          </div>
+          <div class="form__item">
+            <label class="form__item-label">Коротка інформація</label>
+            <textarea class="form__item-textarea short-info" id="short-info" name="short-info" placeholder="Коротка інформація для карточки тварини в каталозі"></textarea>
+          </div>
+          <div class="form__item">
+            <label class="form__item-label">Повна інформація</label>
+            <textarea class="form__item-textarea full-info" id="full-info" name="full-info" placeholder="Повна інформація для сторінки тварини: характеристика, активність, хвороби тощо"></textarea>
+          </div>
+          <button class="form__send-btn btn gradient" type="submit">
+            <p>Зберегти</p>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div class="pop-up-new-need pop-up">
+  <div class="pop-up__backdrop"></div>
+
+  <div class="container">
+    <div class="pop-up__content">
+      <div class="pop-up__head">
+        <h2 class="pop-up__subtitle subtitle">Додавання нової потреби для <span class="name-needs-pet">///</span></h2>
+      </div>
+
+      <div class="pop-up__form form">
+        <form autocomplete="off" id="form-new-need">
+          <div class="form__item">
+            <label class="form__item-label"> Вид </label>
+            <input type="text" class="form__item-input item" id="item" name="item" placeholder="Назва потреби" autocomplete="off" />
+          </div>
+          <div class="form__item">
+            <label class="form__item-label"> Ціна </label>
+            <input type="number" class="form__item-input cost" id="cost" name="cost" placeholder="000" autocomplete="off" />
+          </div>
+          <button class="form__send-btn btn gradient" type="submit">
+            <p>Зберегти</p>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div class="pop-up-massage pop-up">
+  <div class="pop-up__backdrop"></div>
+
+  <div class="container">
+    <div class="pop-up__content">
+      <div class="pop-up__head">
+        <h2 class="pop-up__subtitle subtitle">Повідомлення для <span>???</span></h2>
+      </div>
+
+      <div class="pop-up__form form">
+        <form autocomplete="off" id="form-massage">
+          <div class="form__item">
+            <label class="form__item-label"> Тема </label>
+            <input type="text" class="form__item-input topic" id="topic" name="topic" placeholder="Тема вашого повідомлення" autocomplete="off" />
+          </div>
+          <div class="form__item">
+            <label class="form__item-label"> Відправник </label>
+            <input type="text" class="form__item-input who-send" id="who-send" name="who-send" placeholder="Іван Іванов" autocomplete="off" />
+          </div>
+          <div class="form__item">
+            <label class="form__item-label">Текст повідомлення</label>
+            <textarea class="form__item-textarea text" id="text" name="text" placeholder="Текст повідомлення"></textarea>
+          </div>
+          <button class="form__send-btn btn gradient" type="submit">
+            <p>Надіслати</p>
+          </button>
         </form>
       </div>
     </div>
